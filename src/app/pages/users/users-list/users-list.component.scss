@@ -1,0 +1,88 @@
+@import '../../../@theme/styles/themes.scss';
+@include nb-install-component() {
+    nb-card {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+ :host /deep/ ng2-st-tbody-edit-delete {
+    height: 1px !important;
+}
+
+ :host /deep/ ng2-st-tbody-custom a {
+    height: 1px !important;
+}
+
+ :host /deep/ ng2-st-tbody-custom a i.nb-search {
+    &:hover {
+        color: #36f
+    }
+}
+
+:host /deep/ ng2-st-tbody-custom a i.nb-location {
+    &:hover {
+        color: rgb(156, 134, 5)
+    }
+}
+
+:host /deep/ ng2-st-tbody-custom a i.nb-edit {
+    &:hover {
+        color: rgb(71, 30, 184)
+    }
+}
+
+:host /deep/ ng2-st-tbody-custom a i.nb-trash {
+    &:hover {
+        color: #dc3545
+    }
+}
+
+nb-card-body {
+    padding-top: 1rem;
+    >* {
+        margin-top: 1rem;
+    }
+}
+
+.full-name-inputs,
+.validation-checkboxes {
+    display: flex;
+    margin: 0 -0.5rem;
+    >* {
+        margin: 0 0.5rem;
+    }
+}
+
+.checkbox-radio {
+    display: flex;
+}
+
+.demo-items {
+    flex: 1 0 33%;
+}
+
+.smart-table {
+    height: 100px;
+}
+
+:host /deep/ ng2-st-tbody-edit-delete {
+    display: inline-block !important;
+    height: 0 !important;
+    text-align: center !important;
+    width: 50px;
+}
+
+:host /deep/ .ng2-smart-actions {
+    text-align: center !important;
+}
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+:host /deep/ ng2-smart-table .ng2-smart-actions {
+    white-space: nowrap !important;
+}

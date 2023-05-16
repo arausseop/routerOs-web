@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-md-12">
+        <form (ngSubmit)="saveForm()" [formGroup]="userNewType">
+            <nb-card>
+                <nb-card-header>{{ 'module.users.informationTitle' | translate }}</nb-card-header>
+                <nb-card-body>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="label">{{ 'module.users.labels.firstName' | translate }}</label>
+                                <input type="text" nbInput fullWidth fieldSize="small" formControlName='firstName' [status]="(userNewType.get('firstName').invalid && userNewType.get('firstName').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.users.labels.firstName' | translate }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="label">{{ 'module.users.labels.lastName' | translate }}</label>
+                                <input type="text" nbInput fullWidth fieldSize="small" formControlName='lastName' [status]="(userNewType.get('lastName').invalid && userNewType.get('lastName').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.users.labels.lastName' | translate }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="label">{{ 'module.users.labels.dni' | translate }}</label>
+                                <input type="text" nbInput fullWidth fieldSize="small" formControlName='dni' [status]="(userNewType.get('dni').invalid && userNewType.get('dni').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.users.labels.dni' | translate }}">
+                            </div>
+                        </div>
+                        <!--<div class="col-md-6">
+                            <div class="form-group">
+                                <label class="label">{{ 'module.users.labels.routers' | translate }}</label>
+                                <nb-select multiple fullWidth size="small" formControlName='userRouters' placeholder="{{ 'module.users.labels.router' | translate }}">
+                                    <nb-option [value]="null">{{'formFields.selectInput.initOption' | translate }}</nb-option>
+                                    <nb-option [value]="router.uuid" *ngFor="let router of routers">{{router.name}}</nb-option>
+                                </nb-select>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="label">{{ 'module.users.labels.email' | translate }}</label>
+                                <input type="text" nbInput fullWidth fieldSize="small" formControlName='email' [status]="((userNewType.get('email').invalid && userNewType.get('email').errors.maxlength) || (userNewType.get('email').invalid && userNewType.get('email').errors.email))  ? 'danger' : 'basic'"
+                                    placeholder="{{ 'module.users.labels.email' | translate }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="label">{{ 'module.users.labels.password' | translate }}</label>
+                                <input type="password" nbInput fullWidth fieldSize="small" formControlName='password' [status]="((userNewType.get('password').invalid && userNewType.get('password').errors.maxlength) || (userNewType.get('password').invalid && userNewType.get('password').errors.minlength)) ? 'danger' : 'basic'"
+                                    placeholder="{{ 'module.users.labels.password' | translate }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+							<div class="form-group">
+								<label class="label">{{ 'module.user.labels.imagePath' | translate }}</label>
+                                <input type="file" nbInput fullWidth fieldSize="small" formControlName='avatar' (change)="fileChangeEvent($event)" [status]="((userNewType.get('avatar').invalid && userNewType.get('avatar').errors.maxlength) || (userNewType.get('avatar').invalid && userNewType.get('avatar').errors.email))  ? 'danger' : 'basic'"
+                                    placeholder="{{ 'module.users.labels.email' | translate }}">
+								
+							</div>
+						
+                        </div>
+                        <div class="col-md-4">
+                            <label class="label">{{ 'module.fieldImage.labels.imageDate' | translate }}</label>
+                            <div class="form-group">
+                                <input nbInput fullWidth fieldSize="small" formControlName="expiredAt" placeholder="{{ 'module.fieldImage.labels.imageDate' | translate }}" [nbDatepicker]="dateImagePicker">
+                                <nb-datepicker size="small" #dateImagePicker></nb-datepicker>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mt-4 text-left">
+                                <nb-toggle formControlName='active' labelPosition="right">{{ 'module.users.labels.enabled' | translate }}</nb-toggle>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3 label">{{ 'module.users.labels.group' | translate }}</label>
+                                    <div class="col-sm-12">
+                                        <nb-radio-group formControlName='roleGroups'>
+                                            <nb-radio [value]="group.uuid" *ngFor="let group of roleGroups">{{ group.name }}</nb-radio>
+                                        </nb-radio-group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </nb-card-body>
+                <nb-card-footer>
+                    <div class="text-right buttons-row">
+                        <button class="mr-2" type="submit" nbButton [disabled]="!userNewType.valid" status="success">{{ 'buttons.save' | translate }}</button>
+                        <a [routerLink]="['/pages/users/list']" status="danger" nbButton>{{ 'buttons.cancel' | translate }}</a>
+                    </div>
+                </nb-card-footer>
+            </nb-card>
+        </form>
+    </div>
+</div>

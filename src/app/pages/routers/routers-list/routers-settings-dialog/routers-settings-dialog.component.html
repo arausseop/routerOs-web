@@ -1,0 +1,63 @@
+<form (ngSubmit)="saveForm()" [formGroup]="fieldImageNewType">
+    <nb-card class="scrollable">
+        <nb-card-header>{{ 'module.fieldImage.informationTitle' | translate }}</nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="label">{{ 'module.fieldImage.labels.imageDate' | translate }}</label>
+                    <div class="form-group">
+                        <input nbInput fullWidth fieldSize="small" formControlName="imageDate" placeholder="{{ 'module.fieldImage.labels.imageDate' | translate }}" [nbDatepicker]="dateImagePicker">
+                        <nb-datepicker size="small" #dateImagePicker></nb-datepicker>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.fieldImage.labels.imageType' | translate }}</label>
+                        <nb-select fullWidth formControlName="imageType" size="small" placeholder="{{ 'module.fieldImage.labels.imageType' | translate }}">
+                            <nb-option [value]="null">{{'formFields.selectInput.initOption' | translate }}</nb-option>
+                            <nb-option [value]="imageType.id" *ngFor="let imageType of imageTypes">{{imageType.name}}</nb-option>
+                        </nb-select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.fieldImage.labels.imagePath' | translate }}</label>
+                        <input type="file" nbInput fullWidth fieldSize="small" formControlName='imagePath' (change)="fileChangeEvent($event)" [status]="(fieldImageNewType.get('imagePath').invalid && fieldImageNewType.get('imagePath').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.fieldImage.labels.imagePath' | translate }}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.fieldImage.labels.comment' | translate }}</label>
+                        <!-- <input type="text" nbInput fullWidth fieldSize="small" formControlName='address' [status]="(fieldNewType.get('address').invalid && fieldNewType.get('address').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.fields.labels.address' | translate }}"> -->
+                        <textarea nbInput fullWidth placeholder="{{ 'module.fieldImage.labels.comment' | translate }}" formControlName='comment'></textarea>
+                    </div>
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer>
+            <div class="text-right buttons-row">
+                <button class="mr-2" type="submit" nbButton status="success">{{ 'buttons.save' | translate }}</button>
+                <button (click)="closeUserFormDialog()" status="danger" nbButton>{{ 'buttons.close' | translate }}</button>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+</form>
+
+
+<ng-template #dialog let-data let-ref="dialogRef">
+    <nb-card>
+        <nb-card-header>{{'messages.deleteRecordModalTitle' | translate }}</nb-card-header>
+        <nb-card-body>{{ data }}</nb-card-body>
+        <nb-card-footer>
+            <div class="text-right buttons-row">
+                <button class="mr-2" (click)="ref.close(true)" nbButton status="success">{{ 'buttons.confirm' | translate }}</button>
+                <button class="mr-2" (click)="ref.close(false)" nbButton status="danger">{{ 'buttons.cancel' | translate }}</button>
+            </div>
+            <!-- <button nbButton (click)="ref.close()">Close Dialog</button> -->
+        </nb-card-footer>
+    </nb-card>
+</ng-template>

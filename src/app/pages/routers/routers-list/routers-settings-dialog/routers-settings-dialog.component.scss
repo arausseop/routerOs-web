@@ -1,0 +1,115 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+    .font-row {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+
+        .header {
+            align-items: baseline;
+        }
+    }
+
+    .headings-card {
+        h1 {
+            margin: 0;
+        }
+
+        .header {
+            padding-bottom: 0.675rem;
+            margin-bottom: 0.675rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid nb-theme(divider-color);
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .scrollable {
+        max-height: 95vh;
+        overflow-y: hidden;
+    }
+}
+
+:host /deep/ ng2-st-tbody-edit-delete {
+    height: 1px !important;
+}
+
+:host /deep/ ng2-st-tbody-custom a {
+    height: 1px !important;
+}
+
+:host /deep/ ng2-st-tbody-custom a i.nb-search {
+    &:hover {
+        color: #36f
+    }
+}
+
+:host /deep/ ng2-st-tbody-custom a i.nb-location {
+    &:hover {
+        color: rgb(156, 134, 5)
+    }
+}
+
+:host /deep/ ng2-st-tbody-custom a i.nb-edit {
+    &:hover {
+        color: rgb(71, 30, 184)
+    }
+}
+
+:host /deep/ ng2-st-tbody-custom a i.nb-trash {
+    &:hover {
+        color: #dc3545
+    }
+}
+
+:host /deep/ ng2-st-tbody-edit-delete {
+    display: inline !important;
+    height: 0 !important;
+    text-align: center !important;
+    width: 50px;
+}
+
+:host /deep/ .ng2-smart-actions {
+    text-align: center !important;
+}
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+:host /deep/ ng2-smart-table .ng2-smart-actions {
+    white-space: nowrap !important;
+}
+
+:host /deep/ ng2-smart-table tbody>tr>td {
+    white-space: nowrap !important;
+}
+
+.addPointer {
+    cursor: pointer;
+
+    &:hover {
+        color: #36f;
+    }
+}
+
+.model-full {
+    width: 900px !important;
+}

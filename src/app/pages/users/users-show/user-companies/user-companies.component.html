@@ -1,0 +1,52 @@
+<nb-card>
+    <nb-card-header>
+        {{ 'module.users.companyTitle' | translate }}
+    </nb-card-header>
+
+    <nb-card-body>
+        <ng2-smart-table class="order-table" [settings]="settings" [source]="source" (delete)="onDeleteAction($event, dialog)" (create)="onAddAction(dialogCompanyForm)" (custom)="onCustomAction($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+</nb-card>
+
+<ng-template #dialog let-data let-ref="dialogRef">
+    <nb-card>
+        <nb-card-header>{{'messages.deleteRecordModalTitle' | translate }}</nb-card-header>
+        <nb-card-body>{{ data }}</nb-card-body>
+        <nb-card-footer>
+            <div class="text-right buttons-row">
+                <button class="mr-2" (click)="ref.close(true)" nbButton status="success">{{ 'buttons.confirm' | translate }}</button>
+                <button class="mr-2" (click)="ref.close(false)" nbButton status="danger">{{ 'buttons.cancel' | translate }}</button>
+            </div>
+            <!-- <button nbButton (click)="ref.close()">Close Dialog</button> -->
+        </nb-card-footer>
+    </nb-card>
+</ng-template>
+
+<ng-template #dialogCompanyForm let-data let-ref="dialogRef">
+    <form (ngSubmit)="saveForm()" [formGroup]="userCompanyNewType">
+        <nb-card>
+            <nb-card-header>Asignar Compañía</nb-card-header>
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="label">{{ 'module.users.labels.company' | translate }}</label>
+                            <nb-select fullWidth size="small" formControlName='company' placeholder="{{ 'module.users.labels.company' | translate }}">
+                                <nb-option [value]="null">{{'formFields.selectInput.initOption' | translate }}</nb-option>
+                                <nb-option [value]="company.id" *ngFor="let company of companies">{{company.name}}</nb-option>
+                            </nb-select>
+                        </div>
+                    </div>
+                </div>
+            </nb-card-body>
+            <nb-card-footer>
+                <div class="text-right buttons-row">
+                    <button type="button" class="mr-2" (click)="saveForm(ref)" nbButton status="success">{{ 'buttons.save' | translate }}</button>
+                    <button class="mr-2" (click)="ref.close(false)" nbButton status="danger">{{ 'buttons.cancel' | translate }}</button>
+                </div>
+                <!-- <button nbButton (click)="ref.close()">Close Dialog</button> -->
+            </nb-card-footer>
+        </nb-card>
+    </form>
+</ng-template>

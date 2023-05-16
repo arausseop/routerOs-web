@@ -1,0 +1,96 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center mb-4">
+            <a href="https://www.test.com.ecu" target="_blank"><img alt="TESTLOGO" style=" height: 190px; vertical-align: text-bottom;" src="../../assets/images/completeLogotest.png"></a>
+
+        </div>
+    </div>
+</div>
+
+<nb-alert *ngIf="showMessages.error && errors?.length && !submitted" outline="danger" role="alert">
+    <p class="alert-title"><b>{{ 'module.auth.login.alertTitle'| translate}}</b></p>
+    <ul class="alert-message-list">
+        <li *ngFor="let error of errors" class="alert-message">{{ error }}</li>
+    </ul>
+</nb-alert>
+
+<nb-alert *ngIf="showMessages.success && messages?.length && !submitted" outline="success" role="alert">
+    <p class="alert-title"><b>{{ 'module.auth.login.loginSuccessTitle'| translate}}</b></p>
+    <ul class="alert-message-list">
+        <li *ngFor="let message of messages" class="alert-message">{{ message }}</li>
+    </ul>
+</nb-alert>
+<div class="row">
+    <div class="col-md-12">
+        <form (ngSubmit)="login()" #form="ngForm" aria-labelledby="title">
+
+            <div class="form-control-group">
+                <label class="label" for="input-email">{{ 'module.auth.login.labels.email'| translate}}:</label>
+                <input nbInput fullWidth [(ngModel)]="user.email" #email="ngModel" name="email" id="input-email" pattern=".+@.+\..+" placeholder="{{ 'module.auth.login.labels.email'| translate}}" fieldSize="large" autofocus [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : 'basic'"
+                    [required]="getConfigValue('forms.validation.email.required')" [attr.aria-invalid]="email.invalid && email.touched ? true : null">
+                <ng-container *ngIf="email.invalid && email.touched">
+                    <p class="caption status-danger" *ngIf="email.errors?.required">
+                        {{ 'module.auth.login.labels.email_required'| translate}}
+                    </p>
+                    <p class="caption status-danger" *ngIf="email.errors?.pattern">
+                        {{ 'module.auth.login.labels.email_valid'| translate}}
+                    </p>
+                </ng-container>
+            </div>
+            <div class="form-control-group">
+                <span class="label-with-link">
+          <label class="label" for="input-password">{{ 'module.auth.login.labels.password'| translate}}:</label>
+        </span>
+                <input nbInput fullWidth [(ngModel)]="user.password" #password="ngModel" name="password" type="password" id="input-password" placeholder="{{ 'module.auth.login.labels.password'| translate}}" fieldSize="large" [status]="password.dirty ? (password.invalid  ? 'danger' : 'success') : 'basic'"
+                    [required]="getConfigValue('forms.validation.password.required')" [minlength]="getConfigValue('forms.validation.password.minLength')" [maxlength]="getConfigValue('forms.validation.password.maxLength')" [attr.aria-invalid]="password.invalid && password.touched ? true : null">
+                <ng-container *ngIf="password.invalid && password.touched ">
+                    <p class="caption status-danger" *ngIf="password.errors?.required">
+                        {{ 'module.auth.login.labels.password_required'| translate}}
+                    </p>
+                    <p class="caption status-danger" *ngIf="password.errors?.minlength || password.errors?.maxlength">
+                        {{ 'module.auth.login.labels.password_validation_length' | translate: { minLength: getConfigValue('forms.validation.password.minLength'), maxLength: getConfigValue('forms.validation.password.maxLength') } }}
+                    </p>
+                </ng-container>
+            </div>
+            <button nbButton fullWidth status="primary" size="large" [disabled]="submitted || !form.valid" [class.btn-pulse]="submitted">
+        {{ 'module.auth.login.buttons.login'| translate}}
+      </button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+        <section style="display: none;" *ngIf="socialLinks && socialLinks.length > 0" class="links" aria-label="Social sign in">
+            or enter with:
+            <div class="socials">
+                <ng-container *ngFor="let socialLink of socialLinks">
+                    <a *ngIf="socialLink.link" [routerLink]="socialLink.link" [attr.target]="socialLink.target" [attr.ecuass]="socialLink.icon" [class.with-icon]="socialLink.icon">
+                        <nb-icon *ngIf="socialLink.icon; else title" [icon]="socialLink.icon"></nb-icon>
+                        <ng-template #title>{{ socialLink.title }}</ng-template>
+                    </a>
+                    <a *ngIf="socialLink.url" [attr.href]="socialLink.url" [attr.target]="socialLink.target" [attr.ecuass]="socialLink.icon" [class.with-icon]="socialLink.icon">
+                        <nb-icon *ngIf="socialLink.icon; else title" [icon]="socialLink.icon"></nb-icon>
+                        <ng-template #title>{{ socialLink.title }}</ng-template>
+                    </a>
+                </ng-container>
+            </div>
+        </section>
+        <section style="display: none;" class="another-action" aria-label="Register">
+            Don't have an account? <a class="text-link" routerLink="../register">Register</a>
+        </section>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center m-3">
+            <span>Developed by</span>&nbsp;
+                <a href="https://www.carlos.com" target="_blank"><img alt="carlos.com" src="../../assets/images/carlos-logo-blanco.png" style="height: 15px; margin-right: 5px;" border="0"></a>
+                <span>For</span>&nbsp;
+                <a href="https://www.test.com.ecu" target="_blank"><img alt="TESTLOGO" style="height: 25px; vertical-align: text-bottom;" src="../../assets/images/testLogoBlancoBold.png"></a>
+
+        </div>
+    </div>
+</div>

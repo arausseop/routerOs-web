@@ -1,0 +1,79 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+    .userpic {
+        border: 1px dashed #b8b8b8;
+        width: 202px;
+        height: 202px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .userpic .userpic-wrapper {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .font-row {
+        margin-bottom: 2rem;
+
+        .header {
+            align-items: baseline;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .headings-card {
+        h1 {
+            margin: 0;
+        }
+
+        .header {
+            padding-bottom: 0.675rem;
+            margin-bottom: 0.675rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid nb-theme(divider-color);
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .form-inline [fullWidth] {
+        flex: 1;
+    }
+
+    .form-inline>* {
+        margin: 0 1.5rem 1.5rem 0;
+    }
+
+    nb-card.inline-form-card nb-card-body {
+        padding-bottom: 0;
+    }
+}
+
+/deep/ .cdk-global-scrollblock {
+    position: static !important;
+}

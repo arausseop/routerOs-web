@@ -1,0 +1,90 @@
+<form (ngSubmit)="saveForm()" [formGroup]="routerNewType">
+    <nb-card>
+        <nb-card-header>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ 'module.routers.informationTitle' | translate }}
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.routers.labels.name' | translate }}</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" formControlName='name' [status]="(routerNewType.get('name').invalid && routerNewType.get('name').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.routers.labels.name' | translate }}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.routers.labels.ipAddress' | translate }}</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" formControlName='ipAddress' [status]="(routerNewType.get('ipAddress').invalid && routerNewType.get('ipAddress').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.routers.labels.ipAddress' | translate }}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.routers.labels.login' | translate }}</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" formControlName='login' [status]="(routerNewType.get('login').invalid && routerNewType.get('login').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.routers.labels.login' | translate }}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.routers.labels.password' | translate }}</label>
+                        <input type="password" nbInput fullWidth fieldSize="small" formControlName='password' [status]="(routerNewType.get('password').invalid && routerNewType.get('password').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.routers.labels.password' | translate }}">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.routers.labels.description' | translate }}</label>
+                        <!--<input type="text" nbInput fullWidth fieldSize="small" formControlName='description' [status]="(routerNewType.get('description').invalid && routerNewType.get('description').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.routers.labels.description' | translate }}">-->
+                        <textarea nbInput fullWidth placeholder="{{ 'module.routers.labels.description' | translate }}" formControlName='description'></textarea>
+                    </div>
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer>
+
+            <div class="text-right buttons-row">
+                <button class="mr-2" type="submit" nbButton [disabled]="!routerNewType.valid" status="success">{{ 'buttons.save' | translate }}</button>
+                <a [routerLink]="['/pages/routers/list']" status="danger" nbButton>{{ 'buttons.cancel' | translate }}</a>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+</form>
+
+<!--<form (ngSubmit)="saveChangePassword()" [formGroup]="changePasswordType">
+    <nb-card>
+        <nb-card-header>{{ 'module.routers.changePasswordTitle' | translate }}</nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.routers.labels.password' | translate }}</label>
+                        <input type="password" nbInput fullWidth fieldSize="small" [status]="(changePasswordType.get('password').invalid) ? 'danger' : 'basic'" formControlName='password' placeholder="{{ 'module.routers.labels.password' | translate }}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.routers.labels.confirmPassword' | translate }}</label>
+                        <input type="password" nbInput fullWidth fieldSize="small" [status]="changePasswordType.get('confirmPassword').invalid ? 'danger' : 'basic'" formControlName='confirmPassword' placeholder="{{ 'module.routers.labels.confirmPassword' | translate }}">
+                    </div>
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer>
+            <div class="text-right buttons-row">
+                <a class="mr-2" (click)="passwordEdit()" [hidden]="passwordEditControl" status="primary" nbButton>{{ 'buttons.changePassword' | translate }}</a>
+                <span [hidden]="!passwordEditControl">
+                    <button class="mr-2" type="submit" nbButton [disabled]="!changePasswordType.valid || changePasswordType.pristine" status="success">{{ 'buttons.save' | translate }}</button>
+                    <a (click)="passwordCancel()" status="danger" nbButton>{{ 'buttons.cancel' | translate }}</a>
+                </span>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+</form>-->

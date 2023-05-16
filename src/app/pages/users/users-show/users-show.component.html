@@ -1,0 +1,114 @@
+<form (ngSubmit)="saveForm()" [formGroup]="userEditType">
+    <nb-card>
+        <nb-card-header>{{ 'module.users.informationTitle' | translate }}</nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.users.labels.firstName' | translate }}</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" formControlName='firstName' [status]="(userEditType.get('firstName').invalid && userEditType.get('firstName').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.users.labels.firstName' | translate }}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.users.labels.lastName' | translate }}</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" formControlName='lastName' [status]="(userEditType.get('lastName').invalid && userEditType.get('lastName').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.users.labels.lastName' | translate }}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.users.labels.dni' | translate }}</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" formControlName='dni' [status]="(userEditType.get('dni').invalid && userEditType.get('dni').errors.maxlength) ? 'danger' : 'basic'" placeholder="{{ 'module.users.labels.dni' | translate }}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.users.labels.email' | translate }}</label>
+                        <input type="text" nbInput fullWidth fieldSize="small" formControlName='email' [status]="((userEditType.get('email').invalid && userEditType.get('email').errors.maxlength) || (userEditType.get('email').invalid && userEditType.get('email').errors.email))  ? 'danger' : 'basic'"
+                            placeholder="{{ 'module.users.labels.email' | translate }}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.user.labels.imagePath' | translate }}</label>
+                        <input type="file" nbInput fullWidth fieldSize="small" formControlName='avatar' (change)="fileChangeEvent($event)" [status]="((userEditType.get('avatar').invalid && userEditType.get('avatar').errors.maxlength) || (userEditType.get('avatar').invalid && userEditType.get('avatar').errors.email))  ? 'danger' : 'basic'"
+                            placeholder="{{ 'module.users.labels.email' | translate }}">
+                        
+                    </div>
+                
+                </div>
+                <div class="col-md-4">
+                    <label class="label">{{ 'module.fieldImage.labels.imageDate' | translate }}</label>
+                    <div class="form-group">
+                        <input nbInput fullWidth fieldSize="small" formControlName="expiredAt" placeholder="{{ 'module.fieldImage.labels.imageDate' | translate }}" [nbDatepicker]="dateImagePicker">
+                        <nb-datepicker size="small" #dateImagePicker></nb-datepicker>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mt-4 text-left">
+                        <nb-toggle formControlName='active' labelPosition="right">{{ 'module.users.labels.enabled' | translate }}</nb-toggle>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-3 label">{{ 'module.users.labels.group' | translate }}</label>
+                            <div class="col-sm-12">
+                                <nb-radio-group formControlName='roleGroups'>
+                                    <nb-radio [value]="group.uuid" *ngFor="let group of roleGroups">{{ group.name }}</nb-radio>
+                                </nb-radio-group>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer>
+            <div class="text-right buttons-row">
+                <a class="mr-2" (click)="userEdit()" [hidden]="userEditControl" status="primary" nbButton>{{ 'buttons.edit' | translate }}</a>
+                <span [hidden]="!userEditControl">
+                            <button class="mr-2" type="submit" nbButton [disabled]="!userEditType.valid || userEditType.pristine" status="success">{{ 'buttons.save' | translate }}</button>
+                            <a (click)="userCancel()" status="danger" nbButton>{{ 'buttons.cancel' | translate }}</a>
+                        </span>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+</form>
+
+<form (ngSubmit)="saveChangePassword()" [formGroup]="changePasswordType">
+    <nb-card>
+        <nb-card-header>{{ 'module.users.changePasswordTitle' | translate }}</nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.users.labels.password' | translate }}</label>
+                        <input type="password" nbInput fullWidth fieldSize="small" [status]="(changePasswordType.get('password').invalid) ? 'danger' : 'basic'" formControlName='password' placeholder="{{ 'module.users.labels.password' | translate }}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label">{{ 'module.users.labels.confirmPassword' | translate }}</label>
+                        <input type="password" nbInput fullWidth fieldSize="small" [status]="changePasswordType.get('confirmPassword').invalid ? 'danger' : 'basic'" formControlName='confirmPassword' placeholder="{{ 'module.users.labels.confirmPassword' | translate }}">
+                    </div>
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer>
+            <div class="text-right buttons-row">
+                <a class="mr-2" (click)="passwordEdit()" [hidden]="passwordEditControl" status="primary" nbButton>{{ 'buttons.changePassword' | translate }}</a>
+                <span [hidden]="!passwordEditControl">
+                    <button class="mr-2" type="submit" nbButton [disabled]="!changePasswordType.valid || changePasswordType.pristine" status="success">{{ 'buttons.save' | translate }}</button>
+                    <a (click)="passwordCancel()" status="danger" nbButton>{{ 'buttons.cancel' | translate }}</a>
+                </span>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+    <!--<ngx-user-companies [userId]="userId"></ngx-user-companies>-->
+</form>

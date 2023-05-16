@@ -1,0 +1,16 @@
+ng g m pages/companies --routing 
+ng g c pages/companies/companies --flat=true --inline-template=true --inline-style=true 
+ng g c pages/companies/companiesList
+ng g c pages/companies/companiesNew
+ng g c pages/companies/companiesEdit
+ng g c pages/companies/companiesShow
+
+ng g c pages/company/company --flat=true --inline-template=true --inline-style=true 
+ng g cl @core/data companyData
+ng g cl @core/data/companyData
+ng g s @core/mock/company
+ng g c pages/companies/company --flat=true --inline-template=true --inline-style=true 
+ng g m pages/moduleTest --routing=true --module=pages.module.ts 
+ng g m pages/company --routing=true --module=pages.module.ts 
+ng g m pages/company --routing=true --module=PagesModule 
+ng g m pages/company --routing=true --module=pages/pages.module.ts 

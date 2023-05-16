@@ -1,0 +1,602 @@
+{
+  "module": {
+    "users": {
+      "title": "Módulo de Usuarios",
+      "singularNameModule": "Usuario",
+      "profileTitle": "Perfil de Usuario",
+      "generalInformation": "Información General",
+      "contactAndCompanyInformationTitle": "Información de Contacto y Compañía",
+      "companyTitle": "Compañías",
+      "informationTitle": "Información de Usuario",
+      "changePasswordTitle": "Cambiar contraseña",
+      "usersTitle": "Usuarios",
+      "inputs": {},
+      "labels": {
+        "email": "Correo Electrónico",
+        "username": "Nombre de Usuario",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "password": "Contraseña",
+        "confirmPassword": "Confirmar Contraseña",
+        "company": "Compañía",
+        "group": "Grupo",
+        "phone": "Teléfono",
+        "enabled": "Activo"
+      },
+      "columns": {
+        "name": "Nombre y Apellido",
+        "email": "Correo Electrónico",
+        "group": "Grupo",
+        "company": "Compañía",
+        "phone": "Teléfono",
+        "noDataMessage": "N/A",
+        "enabled": "Activo",
+        "actions": "Acciones"
+      }
+    },
+    "routers": {
+      "title": "Módulo de Routers",
+      "singularNameModule": "Router",
+      "generalInformation": "Información General",
+      "informationTitle": "Información de Router",
+      "routersTitle": "Routers",
+      "inputs": {},
+      "labels": {
+        "identity": "Identidad",
+        "ipAddress": "Dirección Ip",
+        "login": "Nombre de Usuario",
+        "password": "Password",
+        "connect": "Conectado",
+        "name": "Nombre",
+        "description": "Descripción"
+      },
+      "columns": {
+        "identity": "Identidad",
+        "ipAddress": "Dirección Ip",
+        "login": "Username",
+        "password": "Password",
+        "connect": "Conectado",
+        "name": "Nombre",
+        "description": "Descripción",
+        "actions": "Acciones"
+      }
+    },
+    "modules": {
+      "title": "Módulos",
+      "singularNameModule": "Módulo",
+      "informationTitle": "Información de Módulo",
+      "customersTitle": "Customers",
+      "partials": {
+        "newTitle": "New",
+        "labels": {
+          "country": "Country",
+          "region": "Province",
+          "location": "Location"
+        }
+      },
+      "inputs": {},
+      "labels": {
+        "name": "Nombre del Módulo",
+        "code": "Person Contacto",
+        "status": "Activo"
+      },
+      "columns": {
+        "name": "Nombre del Módulo",
+        "code": "Person Contacto",
+        "status": "Activo",
+        "actions": "Acciones"
+      }
+    },
+    "customers": {
+      "title": "Clientes Module",
+      "singularNameModule": "Cliente",
+      "informationTitle": "Información de Cliente",
+      "holdingInformationTitle": "Información del Holding",
+      "usersTitle": "Users",
+      "fieldsTitle": "Fields",
+      "partials": {
+        "newTitle": "New",
+        "labels": {
+          "country": "Country",
+          "region": "Province",
+          "location": "Location"
+        }
+      },
+      "inputs": {},
+      "labels": {
+        "country": "País",
+        "region": "Región",
+        "location": "Localidad",
+        "name": "Nombre Cliente",
+        "cuit": "Cuit",
+        "contactPerson": "Person Contacto",
+        "contactLastName": "Apellido Contacto",
+        "contactPhone": "Teléfono Contacto",
+        "contactEmail": "Correo Contacto",
+        "status": "Activo",
+        "expiredAt": "Fecha Expiración",
+        "timezone": "Zona Horaria",
+        "fieldAgent": "Agente",
+        "addHoldingSwitch": "Agregar Holding",
+        "holding": {
+          "name": "Nombre Holding",
+          "contactPerson": "Persona Contacto",
+          "contactEmail": "Correo Contacto",
+          "contactPhone": "Teléfono Contacto",
+          "customer": "Cliente",
+          "status": "Activo",
+          "expiredAt": "Fecha Expiración"
+        }
+      },
+      "columns": {
+        "name": "Nombre",
+        "cuit": "Rut",
+        "contactPerson": "Person Contacto",
+        "contactEmail": "Correo Contacto",
+        "contactPhone": "Teléfono Contacto",
+        "fieldAgent": "Agente",
+        "status": "Estado",
+        "country": "País",
+        "expiredAt": "Fecha Expiración",
+        "timezone": "Zona Horaria",
+        "actions": "Acciones"
+      }
+    },
+    "companies": {
+      "title": "Módulo de Compañías",
+      "singularNameModule": "Compañía",
+      "informationTitle": "Información de Compañía",
+      "usersTitle": "Usuarios",
+      "fieldsTitle": "Campos",
+      "partials": {
+        "newTitle": "Nuevo",
+        "labels": {
+          "country": "País",
+          "region": "Provincia",
+          "location": "Localidad"
+        }
+      },
+      "inputs": {},
+      "labels": {
+        "country": "País",
+        "region": "Provincia",
+        "location": "Localidad",
+        "name": "Nombre",
+        "cuit": "Cuit",
+        "contactName": "Nombre Contacto",
+        "contactLastName": "Apellido de Contacto",
+        "contactPhone": "Teléfono de Contacto",
+        "contactEmail": "Correo de Contacto",
+        "fieldAgent": "Representante"
+      },
+      "columns": {
+        "name": "Nombre",
+        "cuit": "Cuit",
+        "contactName": "Persona Contacto",
+        "contactEmail": "Email Contacto",
+        "location": "Localidad",
+        "contactPhone": "Teléfono Contacto",
+        "fieldAgent": "Representante",
+        "actions": "Acciones"
+      }
+    },
+    "fields": {
+      "title": "Módulo de Campos",
+      "singularNameModule": "Campo",
+      "resumeFilter": "Filtrar Registros",
+      "georeferenceTitle": "Información Georeferencial",
+      "fieldDetailsTitle": "Detalles del Campo",
+      "informationTitle": "Información del Campo",
+      "inputs": {},
+      "labels": {
+        "company": "Compañía",
+        "name": "Nombre",
+        "fieldStatus": "Estado",
+        "fieldType": "Tipo de Campo",
+        "country": "País",
+        "region": "Provincia",
+        "location": "Localidad",
+        "address": "Dirección",
+        "latitude": "Latitud",
+        "longitude": "Longitud",
+        "radius": "Radio",
+        "googleAddress": "Dirección",
+        "dateRangeFilter": "Rango de Fechas"
+      },
+      "columns": {
+        "company": "Compañía",
+        "location": "Localidad",
+        "name": "Nombre",
+        "address": "Dirección",
+        "lastEvent": "Último Evento",
+        "agent": "Representante",
+        "fieldStatus": "Estado",
+        "devices": "Dispositivos",
+        "actions": "Acciones"
+      }
+    },
+    "devices": {
+      "title": "Módulo de Dispositivos",
+      "singularNameModule": "Dispositivo",
+      "fieldInformationTitle": "Información del Campo",
+      "informationTitle": "Información de Dispositivo",
+      "fieldDeviceConfInformationTitle": "Configuración de horarios del dispositivo",
+      "fieldDeviceConfSubTitle": "Listado de horarios",
+      "fieldDeviceStatusInformationTitle": "Configuración de estado del dispositivo",
+      "fieldDeviceStatusSubTitle": "Cambio de Estado",
+      "fieldDeviceInformationTitle": "Asignación de Campo al Dispositivo",
+      "fieldDeviceSubTitle": "Campo",
+      "inputs": {},
+      "labels": {
+        "name": "Nombre de Dispositivo",
+        "deviceIdentifier": "Identificador de Dispositivo",
+        "deviceType": "Tipo de Dispositivo",
+        "deviceStatus": "Estado de Dispositivo",
+        "addFieldSwitch": "Agregar Campo",
+        "company": "Compañía",
+        "field": "Campos",
+        "fieldSingleLabel": "Campo",
+        "addressField": "Dirección del Campo",
+        "fieldDeviceStatus": "Estado de dispositivo en campo",
+        "lastEvent": "Último Evento"
+      },
+      "columns": {
+        "company": "Compañía",
+        "field": "Campo",
+        "deviceType": "Tipo",
+        "name": "Nombre",
+        "deviceIdentifier": "Identificador",
+        "fieldDeviceStatus": "Estado en Campo de Dispositivo",
+        "deviceStatus": "Estado",
+        "location": "Localidad",
+        "lastEvent": "Último Evento",
+        "actions": "Acciones",
+        "fieldDevicesConf": {
+          "deviceSchedule": "Horario"
+        }
+      },
+      "messages": {
+        "device": {
+          "deviceAssigned": "El dispositivo ya se encuentra asignado a un campo"
+        }
+      }
+    },
+    "deviceTypes": {
+      "title": "Módulo Tipos de Dispositivos",
+      "singularNameModule": "Tipo de Dispositivos",
+      "informationTitle": "Información de tipo de dispositivos",
+      "inputs": {},
+      "labels": {
+        "name": "Nombre",
+        "endpoint": "Link"
+      },
+      "columns": {
+        "name": "Nombre",
+        "endpoint": "Link",
+        "actions": "Acciones"
+      }
+    },
+    "fieldProduct": {
+      "title": "Módulo de Productos",
+      "singularNameModule": "Producto",
+      "informationTitle": "Información de Producto",
+      "inputs": {},
+      "labels": {
+        "name": "Nombre",
+        "code": "Codigo",
+        "active": "Activo"
+      },
+      "columns": {
+        "name": "Nombre",
+        "code": "Codigo",
+        "status": "Estado",
+        "fieldProductName": "Producto",
+        "fieldProductType": "Categoría",
+        "fieldProductQuantity": "Dosis",
+        "actions": "Acciones",
+        "active": "Activo",
+        "inactive": "Inactivo"
+      }
+    },
+    "imageType": {
+      "title": "Módulo de Tipo de Imagenes",
+      "singularNameModule": "Tipo de Imagen",
+      "informationTitle": "Información de Tipo de Imagen",
+      "inputs": {},
+      "labels": {
+        "name": "Nombre"
+      },
+      "columns": {
+        "name": "Nombre",
+        "actions": "Acciones"
+      }
+    },
+    "fieldDetail": {
+      "title": "Módulo de Información Adicional",
+      "aditionalInformationTitle": "Información Adicional",
+      "informationSubTitle": "Listado de Información Adicional",
+      "singularNameModule": "Información Adicional",
+      "informationTitle": "Imformación Adicional",
+      "fieldDetailAddProductTitle": "Agregar Producto al Listado",
+      "fieldDetailListProductTitle": "Listado de Productos Para",
+      "inputs": {},
+      "labels": {
+        "comment": "Comentario",
+        "detailDate": "Fecha",
+        "imageType": "Tipo de Imágen",
+        "field": "Campo",
+        "image": "Imágen",
+        "detailProduct": "Producto",
+        "detailProductType": "Categoría Producto",
+        "productQuantity": "Dosis"
+      },
+      "columns": {
+        "comment": "Comentario",
+        "detailDate": "Fecha",
+        "types": "Tipos",
+        "actions": "Acciones"
+      }
+    },
+    "fieldImage": {
+      "title": "Modulo de Adjuntos del Campo ",
+      "aditionalInformationTitle": "Información Adicional",
+      "informationSubTitle": "Listado de Adjuntos",
+      "singularNameModule": "Imagen de Campo",
+      "informationTitle": "Adjuntos",
+      "fieldImageAddProductTitle": "Agregar Adjunto al Listado",
+      "fieldImageListProductTitle": "Listado de Adjuntos Para",
+      "inputs": {},
+      "labels": {
+        "comment": "Comentario",
+        "imageDate": "Fecha",
+        "imageType": "Tipo de Imagen",
+        "field": "Campo",
+        "imagePath": "Imagen"
+      },
+      "columns": {
+        "imageDate": "Fecha",
+        "imageType": "Tipo",
+        "imagePath": "Imagen",
+        "comment": "Comentario",
+        "actions": "Acciones"
+      }
+    },
+    "fieldProductTypes": {
+      "title": "Módulo de Tipo de Producto",
+      "singularNameModule": "Tipo de Producto",
+      "informationTitle": "Información de tipo de productos",
+      "inputs": {},
+      "labels": {
+        "name": "Nombre",
+        "code": "Codigo",
+        "active": "Activo"
+      },
+      "columns": {
+        "name": "Nombre",
+        "code": "Código",
+        "status": "Estado",
+        "actions": "Acciones",
+        "active": "Activo",
+        "inactive": "Inactivo"
+      }
+    },
+    "countries": {
+      "title": "Módulo de Paises",
+      "singularNameModule": "País",
+      "informationTitle": "Información del País",
+      "inputs": {},
+      "labels": {
+        "name": "Nombre",
+        "code": "Código"
+      },
+      "columns": {
+        "name": "Nombre",
+        "code": "Código",
+        "actions": "Acciones"
+      }
+    },
+    "regions": {
+      "title": "Módulo de Provincias",
+      "singularNameModule": "Provincia",
+      "informationTitle": "Información de Provincia",
+      "inputs": {},
+      "labels": {
+        "name": "Nombre",
+        "code": "Código",
+        "country": "País"
+      },
+      "columns": {
+        "name": "Nombre",
+        "code": "Código",
+        "country": "País",
+        "actions": "Acciones"
+      }
+    },
+    "locations": {
+      "title": "Módulo de Localidades",
+      "singularNameModule": "Localidad",
+      "informationTitle": "Información de Localidad",
+      "inputs": {},
+      "labels": {
+        "name": "Nombre",
+        "code": "Código",
+        "region": "Provincia",
+        "country": "País"
+      },
+      "columns": {
+        "name": "Nombre",
+        "code": "Código",
+        "region": "Provincia",
+        "country": "País",
+        "actions": "Acciones"
+      }
+    },
+    "notifications": {
+      "title": "Módulo de Notificaciones",
+      "singularNameModule": "Notificación",
+      "informationTitle": "Información de Notificación",
+      "notificationDetailTitle": "Detalle de la Notificación",
+      "deviceSubtitle": "Información del Dispositivo",
+      "fieldSubtitle": "Información del Campo",
+      "inputs": {},
+      "labels": {
+        "device": "Dispositivo",
+        "field": "Campo",
+        "address": "Dirección",
+        "lastEventSend": "Último evento enviado",
+        "fieldDeviceStatus": "Estado del dispositivo (Campo)",
+        "notificationType": "Tipo de Notificación",
+        "notificationsCreatedAt": "Fecha",
+        "notificationsStatus": "Estado de la Alerta"
+      },
+      "columns": {
+        "notificationType": "Tipo de Notificación",
+        "notificationsMessage": "Mensaje",
+        "notificationsStatus": "Leído",
+        "notificationsCreatedAt": "Fecha",
+        "notificationsInfo": "Detalle",
+        "actions": "Acciones"
+      }
+    },
+    "reports": {
+      "title": "Módulo de Reportes",
+      "singularNameModule": "Reporte",
+      "informationTitle": "Información de Reporte",
+      "generateReportTitle": "Envíar Reporte",
+      "graphicsTitle": {
+        "title": "Gráficos",
+        "airGraph": "Gráficos (Aire)",
+        "groundGraph": "Gráficos (Suelo)",
+        "ambientGraph": "Gráficos (Ambiente)"
+      },
+      "detailsAndAttachments": {
+        "title": "Información Adicional y Adjuntos",
+        "detailTitle": "Información Adicional",
+        "fieldImageTitle": "Adjuntos"
+      },
+      "detailsTitle": "Agregar Detalles",
+      "labels": {
+        "country": "País",
+        "company": "Compañía",
+        "region": "Provincia",
+        "location": "Localidad",
+        "device": "Dispositivo",
+        "dateRange": "Rango de fecha",
+        "field": "Campo"
+      }
+    },
+    "auth": {
+      "login": {
+        "title": "Inicio de Sesión",
+        "subTitle": "Hola! Inicia sesión con tu correo electrónico",
+        "loginSuccessTitle": "Bienvenido",
+        "loginSuccess": "Ingresando al sistema...",
+        "labels": {
+          "email": "Correo Electrónico",
+          "email_required": "Correo Electrónico es requerido",
+          "email_valid": "Correo Electrónico debe ser válido",
+          "password": "Contraseña",
+          "password_required": "Contraseña es requerida",
+          "password_validation_length": "Contraseña debe ser entre {{minLength}} a {{maxLength}} caracteres."
+        },
+        "buttons": {
+          "login": "Iniciar Sesión"
+        },
+        "alertTitle": "Información"
+      },
+      "logout": {
+        "logoutMessage": "Cerrando sesión, por favor espere..."
+      }
+    },
+    "header": {
+      "menu": {
+        "user": {
+          "profile": "Perfil de Usuario",
+          "logout": "Cerrar Sesión"
+        }
+      }
+    },
+    "sidebar": {
+      "menu": {
+        "feature": "MÓDULOS",
+        "users": "Usuarios",
+        "companies": "Compañías",
+        "fields": "Campos",
+        "device-modules": {
+          "device-modules": "Módulo de dispositivos",
+          "devices": "Dispositivos",
+          "device-types": "Tipos"
+        },
+        "devices": "Dispositivos",
+        "device-types": "T. Dispositivos",
+        "countries": "Paises",
+        "regions": "Provincias",
+        "locations": "Localidades",
+        "prod-cat-modules": {
+          "prod-cat-modules": "Otros",
+          "field-products": "Productos",
+          "image-types": "Tipos de Imagenes",
+          "field-product-types": "Tipo de Productos",
+          "devices": "Devices",
+          "device-types": "Device Types"
+        },
+        "reports": "Reportes"
+      }
+    }
+  },
+  "messages": {
+    "deleteRecordModalTitle": "Advertencia",
+    "deleteModalText": "¿Desea eliminar este registro?",
+    "createRecordModalTitle": "Crear Registro",
+    "createModalText": "¿Desea crear este registro?",
+    "deleteRecordMessage": "El registro fue eliminado satisfactoriamente",
+    "deleteRecordErrorMessage": "El registro no pudo ser eliminado.",
+    "deleteRecordMessageTitle": "{{ value }}",
+    "createdRecordMessage": "El registro se creó satisfactoriamente",
+    "createdRecordErrorMessage": "Error al intentar crear el registro. Intente nuevamente.",
+    "createdRecordMessageTitle": "{{ value }}",
+    "editedRecordMessage": "El registro se actualizó satisfactoriamente",
+    "editedPasswordMessage": "La contraseña se actualizó satisfactoriamente",
+    "editedRecordErrorMessage": "Error al intentar actualizar el registro. Intente nuevamente.",
+    "editedRecordMessageTitle": "{{ value }}",
+    "smartTableNoData": "No hay información disponible.",
+    "smartTableNotAssigned": "No Asignado",
+    "notificationReadTrue": "Leído",
+    "notificationReadFalse": "No Leído",
+    "notificationDeviceType": "Alerta de Dispositvo",
+    "inactiveFieldDeviceModalTitle": "Desactivar Dispositivo",
+    "inactiveFieldDeviceModalMessage": "¿Desea desactivar este dispositivo para este campo?"
+  },
+  "buttons": {
+    "save": "Guardar",
+    "edit": "Editar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "confirm": "Confirmar",
+    "centerMap": "Ubicar Mapa",
+    "addFieldProduct": "Agregar",
+    "changePassword": "Cambiar Contraseña",
+    "filter": "Filtrar",
+    "generateReport": "Generar Reporte",
+    "selectAllToggle": "Todos",
+    "readAllNotification": "Marcar todas como leídas"
+  },
+  "formFields": {
+    "reports": {
+      "selectInput": {
+        "initOption": "- Todos -"
+      }
+    },
+    "fields": {
+      "mapInput": {
+        "clearMap": {
+          "title": "limpiar Mapa",
+          "tooltip": "Click para limpiar el mapa"
+        }
+      }
+    },
+    "selectInput": {
+      "initOption": "Seleccione..."
+    }
+  }
+}
