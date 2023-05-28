@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy, ViewChild, TemplateRef, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, TemplateRef, Input, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 // import { Component } from '@angular/core';
-import { NbWindowRef } from '@nebular/theme';
+import { NbIconConfig, NbWindowRef } from '@nebular/theme';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -28,11 +28,15 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
   selector: 'ngx-routers-settings',
   templateUrl: './routers-settings.component.html',
   styleUrls: ['./routers-settings.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
+
 export class RoutersSettingsComponent implements OnInit, OnDestroy {
   // constructor(public windowRef: NbWindowRef) { }
 
+  bellIconConfig: NbIconConfig = { icon: 'bell-outline', pack: 'eva' };
   private destroy$: Subject<void> = new Subject<void>();
 
   config: NbToastrConfig;

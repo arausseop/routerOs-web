@@ -1,19 +1,15 @@
-import { Component, OnInit, OnDestroy, Input, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, TemplateRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 
 import { Subject } from 'rxjs';
-import { LocalDataSource } from 'ng2-smart-table';
-import { UserApiService } from '../../../@core/mock/user-api.service';
 import { Router } from '@angular/router';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { NbDialogService, NbComponentStatus, NbToastrConfig, NbGlobalPosition, NbGlobalPhysicalPosition, NbToastrService, NbWindowService } from '@nebular/theme';
+import { NbDialogService, NbComponentStatus, NbToastrConfig, NbGlobalPosition, NbGlobalPhysicalPosition, NbToastrService, NbWindowService, NbWindowControlButtonsConfig } from '@nebular/theme';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { HeadersServerDataSource } from '../../../helpers/headers-server-datasource';
 import { NbTokenService } from '../../../auth/services/token/token.service';
 import { RoutersService } from '../../../@core/mock/routers.service';
 import { Routers } from '../../../@core/data/routers-data';
 import { RoutersSettingsComponent } from '../routers-settings/routers-settings.component';
-import { RoutersSettingsDialogComponent } from './routers-settings-dialog/routers-settings-dialog.component';
-
 
 interface IPaging {
   page: number;
@@ -23,7 +19,8 @@ interface IPaging {
 @Component({
   selector: 'ngx-routers-list',
   templateUrl: './routers-list.component.html',
-  styleUrls: ['./routers-list.component.scss']
+  styleUrls: ['./routers-list.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RoutersListComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
@@ -84,7 +81,7 @@ export class RoutersListComponent implements OnInit, OnDestroy {
           {
             name: 'settings',
             title: '<i class="nb-gear"></i>',
-            // title: '<img src="../../../../assets/images/clock-outline.svg" class="clock-action">',
+
           }
         ],
       },
@@ -227,50 +224,22 @@ export class RoutersListComponent implements OnInit, OnDestroy {
 
   openRutersSettingsForm(event) {
     console.log(event.data);
+    const buttonsConfig: NbWindowControlButtonsConfig = {
+      minimize: true,
+      maximize: false,
+      fullScreen: false,
+    };
     this.windowService.open(
       RoutersSettingsComponent,
       {
         title: `Router ${event.data.name} (${event.data.ipAddress})`,
+        buttons: buttonsConfig,
         hasBackdrop: false,
         closeOnEsc: true,
         windowClass: 'router-window'
       });
   }
 
-  openRoutersSettingsDialogForm(component, context, event = null) {
-    console.log('event', event);
-
-    this.windowService.open(
-      this.disabledEscTemplate,
-      {
-        title: 'Window without backdrop',
-        hasBackdrop: false,
-        closeOnEsc: false,
-      },
-    );
-    // this.dialogService.open(component, {
-
-    //   closeOnBackdropClick: false,
-    //   closeOnEsc: false,
-    //   dialogClass: 'model-full',
-    //   hasScroll: false,
-    //   context: context
-    // })
-    //   .onClose.subscribe((data) => {
-    //     // if(data && context.actionModal === "new"){
-    //     //   console.log('data', data);
-
-    //     //   this.source.add(data);
-    //     //   this.source.refresh();
-    //     //   // Agregar a la table el objeto recibido
-    //     // }else if(data && context.actionModal === "show"){
-    //     //   console.log('editttttt', data);
-    //     //   console.log('eventEdited', event);
-    //     //   this.source.update(event.data, data );
-    //     //   console.log('event',event);
-    //     // }
-    //   });
-  }
 
   private showToast(type: NbComponentStatus, title: string, body: string) {
     const config = {
