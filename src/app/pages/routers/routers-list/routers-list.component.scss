@@ -4,8 +4,20 @@
     nb-card {
         transform: translate3d(0, 0, 0);
     }
-
 }
+
+:host /deep/ nb-window.router-window {
+    // nb-window {
+    //add your css
+    min-width: 70rem !important;
+    // }
+}
+
+.router-window {
+    // min-width: 70rem !important;
+    min-width: 80%;
+}
+
 
 :host /deep/ ng2-st-tbody-edit-delete {
     height: 1px !important;

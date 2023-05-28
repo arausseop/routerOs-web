@@ -27,6 +27,7 @@ import {
   NbAutocompleteModule,
   NbToggleModule,
   NbWindowModule,
+  NbBadgeModule,
 
 } from '@nebular/theme';
 
@@ -42,9 +43,10 @@ import { RoutersListComponent } from './routers-list/routers-list.component';
 import { RoutersNewComponent } from './routers-new/routers-new.component';
 import { RoutersShowComponent } from './routers-show/routers-show.component';
 import { RoutersEditComponent } from './routers-edit/routers-edit.component';
-import { RoutersSettingsComponent } from './routers-list/routers-settings/routers-settings.component';
+import { RoutersSettingsComponent } from './routers-settings/routers-settings.component';
 import { RoutersSettingsDialogComponent } from './routers-list/routers-settings-dialog/routers-settings-dialog.component';
-
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { RoutersTabsComponent } from './routers-tabs/routers-tabs.component';
 
 @NgModule({
   declarations: [
@@ -54,14 +56,14 @@ import { RoutersSettingsDialogComponent } from './routers-list/routers-settings-
     RoutersShowComponent,
     RoutersEditComponent,
     RoutersSettingsDialogComponent,
-    RoutersSettingsComponent
+    RoutersSettingsComponent,
+    RoutersTabsComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     NbDatepickerModule,
-    ThemeModule,
     NbTabsetModule,
     NbRouteTabsetModule,
     NbStepperModule,
@@ -89,9 +91,17 @@ import { RoutersSettingsDialogComponent } from './routers-list/routers-settings-
     NbSpinnerModule,
     NbFormFieldModule,
     NbWindowModule.forChild(),
+    NbUserModule,
+    NbActionsModule,
+    NbButtonModule,
+    NbSelectModule,
+    NbIconModule,
+    NbEvaIconsModule,
+    NbBadgeModule
   ],
   entryComponents: [
-    RoutersSettingsComponent
+    // RoutersSettingsComponent,
+    // RouterTab1Component,
 
   ],
 })

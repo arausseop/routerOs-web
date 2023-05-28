@@ -4,24 +4,23 @@
 	</nb-card-header>
 
 	<nb-card-body>
-		<ng2-smart-table class="order-table" [settings]="settings" [source]="source" (delete)="onDeleteAction($event, dialog)" (create)="onAddAction()" (custom)="onCustomAction($event)">
-        </ng2-smart-table>
+		<ng2-smart-table class="order-table" [settings]="settings" [source]="source" (delete)="onDeleteAction($event, dialog)" (create)="onAddAction()" (custom)="onCustomAction($event)"></ng2-smart-table>
 	</nb-card-body>
 </nb-card>
 
 <ng-template #dialog let-data let-ref="dialogRef">
-    <nb-card>
-        <nb-card-header>{{'messages.deleteRecordModalTitle' | translate }}</nb-card-header>
-        <nb-card-body>{{ data }}</nb-card-body>
-        <nb-card-footer>
-            <div class="text-right buttons-row">
-                <button class="mr-2" (click)="ref.close(true)" nbButton status="success">{{ 'buttons.confirm' | translate }}</button>
-                <button class="mr-2" (click)="ref.close(false)" nbButton status="danger">{{ 'buttons.cancel' | translate }}</button>
-            </div>
-            <!-- <button nbButton (click)="ref.close()">Close Dialog</button> -->
-        </nb-card-footer>
-    </nb-card>
+	<nb-card>
+		<nb-card-header>{{'messages.deleteRecordModalTitle' | translate }}</nb-card-header>
+		<nb-card-body>{{ data }}</nb-card-body>
+		<nb-card-footer>
+			<div class="text-right buttons-row">
+				<button class="mr-2" (click)="ref.close(true)" nbbutton status="success">{{ 'buttons.confirm' | translate }}</button>
+				<button class="mr-2" (click)="ref.close(false)" nbbutton status="danger">{{ 'buttons.cancel' | translate }}</button>
+			</div>
+			<!-- <button nbButton (click)="ref.close()">Close Dialog</button> -->
+		</nb-card-footer>
+	</nb-card>
 </ng-template>
 <ng-template #disabledEsc>
-  Disabled close on escape click.
+	Disabled close on escape click.
 </ng-template>

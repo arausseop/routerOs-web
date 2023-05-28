@@ -11,7 +11,7 @@ import { HeadersServerDataSource } from '../../../helpers/headers-server-datasou
 import { NbTokenService } from '../../../auth/services/token/token.service';
 import { RoutersService } from '../../../@core/mock/routers.service';
 import { Routers } from '../../../@core/data/routers-data';
-import { RoutersSettingsComponent } from './routers-settings/routers-settings.component';
+import { RoutersSettingsComponent } from '../routers-settings/routers-settings.component';
 import { RoutersSettingsDialogComponent } from './routers-settings-dialog/routers-settings-dialog.component';
 
 
@@ -30,6 +30,17 @@ export class RoutersListComponent implements OnInit, OnDestroy {
   @Input() companyId: string;
   @ViewChild('contentTemplate', { static: true }) contentTemplate: TemplateRef<any>;
   @ViewChild('disabledEsc', { read: TemplateRef, static: true }) disabledEscTemplate: TemplateRef<HTMLElement>;
+
+  tabs: any[] = [
+    {
+      title: 'Route tab #1',
+      route: '/pages/routers/tab1',
+    },
+    {
+      title: 'Route tab #2',
+      route: '/pages/routers/tab1',
+    },
+  ];
 
   routers: Routers[] = [];
 
@@ -215,11 +226,15 @@ export class RoutersListComponent implements OnInit, OnDestroy {
   }
 
   openRutersSettingsForm(event) {
-    this.windowService.open(RoutersSettingsComponent, {
-      title: `Window`,
-      hasBackdrop: false,
-      closeOnEsc: false,
-    });
+    console.log(event.data);
+    this.windowService.open(
+      RoutersSettingsComponent,
+      {
+        title: `Router ${event.data.name} (${event.data.ipAddress})`,
+        hasBackdrop: false,
+        closeOnEsc: true,
+        windowClass: 'router-window'
+      });
   }
 
   openRoutersSettingsDialogForm(component, context, event = null) {
