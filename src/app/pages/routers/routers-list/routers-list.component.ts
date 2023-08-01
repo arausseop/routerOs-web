@@ -158,12 +158,12 @@ export class RoutersListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.routersService.getRouters().then((getRouters) => {
-      getRouters.subscribe((routers) => {
-        this.routers = routers;
-        this.source.load(routers)
-      });
-    });
+    // this.routersService.getRouters().then((getRouters) => {
+    //   getRouters.subscribe((routers) => {
+    //     this.routers = routers;
+    //     this.source.load(routers)
+    //   });
+    // });
   }
 
   ngOnDestroy() {
@@ -224,6 +224,7 @@ export class RoutersListComponent implements OnInit, OnDestroy {
 
   openRutersSettingsForm(event) {
     console.log(event.data);
+
     const buttonsConfig: NbWindowControlButtonsConfig = {
       minimize: true,
       maximize: false,
@@ -232,6 +233,7 @@ export class RoutersListComponent implements OnInit, OnDestroy {
     this.windowService.open(
       RoutersSettingsComponent,
       {
+        context: { routerInfo: { routerUuid: event.data.uuid } },
         title: `Router ${event.data.name} (${event.data.ipAddress})`,
         buttons: buttonsConfig,
         hasBackdrop: false,

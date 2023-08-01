@@ -75,6 +75,8 @@ import { ReportService } from './mock/report.service';
 import { ReportData } from './data/report-data';
 import { NotificationService } from './mock/notification.service';
 import { NotificationData } from './data/notification-data';
+import { RoutersSettingsData } from './data/routers-settings-data';
+import { RoutersSettingsService } from './mock/routers-settings.service';
 
 
 
@@ -120,6 +122,7 @@ const DATA_SERVICES = [
   { provide: UserApiData, useClass: UserApiService },
   { provide: RoleGroupData, useClass: RoleGroupService },
   { provide: RoutersData, useClass: RoutersService },
+  { provide: RoutersSettingsData, useClass: RoutersSettingsService },
 
   { provide: UserCompanyData, useClass: UserCompanyService },
   { provide: ErrorData, useClass: ErrorService },

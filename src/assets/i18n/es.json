@@ -61,6 +61,26 @@
         "actions": "Acciones"
       }
     },
+    "routersSettings": {
+      "title": "Módulo de Configuración de Routers",
+      "singularNameModule": "Configuración de Router",
+      "generalInformation": "General Information",
+      "informationTitle": "Información de Configuración de Router",
+      "inputs": {},
+      "labels": {
+        "name": "Nombre",
+        "range": "Rango de Ip"
+      },
+      "columns": {
+        "name": "Nombre",
+        "rangeIp": "Rango de Ip",
+        "range": {
+          "from": "Desde (Ip)",
+          "to": "Hasta (Ip)"
+        },
+        "actions": "Acciones"
+      }
+    },
     "modules": {
       "title": "Módulos",
       "singularNameModule": "Módulo",

@@ -1,3 +1,4 @@
+import { RoutersSettingsService } from './routers-settings.service';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -55,7 +56,6 @@ const SERVICES = [
   StatsProgressBarService,
   VisitorsAnalyticsService,
   SecurityCamerasService,
-
   UserApiService,
   RoutersService,
   UserCompanyService,
@@ -65,6 +65,7 @@ const SERVICES = [
   ReportService,
   NotificationService,
   SseService,
+  RoutersSettingsService,
 
 ];
 

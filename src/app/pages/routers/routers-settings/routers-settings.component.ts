@@ -36,6 +36,8 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 export class RoutersSettingsComponent implements OnInit, OnDestroy {
   // constructor(public windowRef: NbWindowRef) { }
 
+  @Input() routerInfo: any;
+  activeTab = false;
   bellIconConfig: NbIconConfig = { icon: 'bell-outline', pack: 'eva' };
   private destroy$: Subject<void> = new Subject<void>();
 
@@ -67,6 +69,7 @@ export class RoutersSettingsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    console.log('roiterInfo', this.routerInfo);
   }
 
   ngOnDestroy() {
@@ -99,8 +102,12 @@ export class RoutersSettingsComponent implements OnInit, OnDestroy {
     this.showToast(this.status, this.title, this.content);
   }
 
-
   close() {
     this.windowRef.close();
+  }
+
+  receivedOuputEvent($event) {
+    this.activeTab = $event;
+    console.log('ouputEvent', [$event])
   }
 }

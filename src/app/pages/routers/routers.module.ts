@@ -47,6 +47,9 @@ import { RoutersSettingsComponent } from './routers-settings/routers-settings.co
 import { RoutersSettingsDialogComponent } from './routers-list/routers-settings-dialog/routers-settings-dialog.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { RoutersTabsComponent } from './routers-tabs/routers-tabs.component';
+import { PoolsListComponent } from './routers-settings/ip/pools/pools-list/pools-list.component';
+import { PoolsNewComponent } from './routers-settings/ip/pools/pools-new/pools-new.component';
+import { PoolsShowComponent } from './routers-settings/ip/pools/pools-show/pools-show.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,9 @@ import { RoutersTabsComponent } from './routers-tabs/routers-tabs.component';
     RoutersSettingsDialogComponent,
     RoutersSettingsComponent,
     RoutersTabsComponent,
+    PoolsListComponent,
+    PoolsNewComponent,
+    PoolsShowComponent,
   ],
   imports: [
     CommonModule,

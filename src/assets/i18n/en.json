@@ -61,6 +61,26 @@
                 "actions": "Actions"
             }
         },
+        "routersSettings": {
+            "title": "Routers Settings Module",
+            "singularNameModule": "Router Setting",
+            "generalInformation": "General Information",
+            "informationTitle": "Router Setting Information",
+            "inputs": {},
+            "labels": {
+                "name": "Name",
+                "range": "Ip Range"
+            },
+            "columns": {
+                "name": "Name",
+                "rangeIp": "Rage Ip",
+                "range": {
+                    "from": "From (Ip)",
+                    "to": "To (Ip)"
+                },
+                "actions": "Actions"
+            }
+        },
         "customers": {
             "title": "Customers Module",
             "singularNameModule": "Customer",

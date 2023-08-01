@@ -1,0 +1,15 @@
+<ng2-smart-table class="order-table" [settings]="settings" [source]="source" (delete)="onDeleteAction($event, dialog)" (create)="onAddAction()" (custom)="onCustomAction($event)"></ng2-smart-table>
+
+
+<ng-template #dialog let-data let-ref="dialogRef">
+	<nb-card>
+		<nb-card-header>{{'messages.deleteRecordModalTitle' | translate }}</nb-card-header>
+		<nb-card-body>{{ data }}</nb-card-body>
+		<nb-card-footer>
+			<div class="text-right buttons-row">
+				<button class="mr-2" (click)="ref.close(true)" nbbutton status="success">{{ 'buttons.confirm' | translate }}</button>
+				<button class="mr-2" (click)="ref.close(false)" nbbutton status="danger">{{ 'buttons.cancel' | translate }}</button>
+			</div>
+		</nb-card-footer>
+	</nb-card>
+</ng-template>
